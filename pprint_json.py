@@ -16,12 +16,9 @@ def pretty_print_json(data):
 
 
 if __name__ == '__main__':
-    try:
-        path = str(input('Введите путь к JSON файлу: '))
-    except ValueError or TypeError:
-        path = None
-    if path is None:
-        print('Некорректные данные. См. пример использования.')
+    path = str(input('Введите путь к JSON файлу: '))
+    json_content = load_data(path)
+    if json_content is None:
+        print('Файл пуст или не существует.')
     else:
-        json_content = load_data(path)
         pretty_print_json(json_content)
