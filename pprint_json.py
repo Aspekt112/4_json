@@ -2,6 +2,7 @@
 
 import json
 import os
+import argparse
 
 
 def load_data(filepath):
@@ -16,8 +17,17 @@ def pretty_print_json(data):
 
 
 if __name__ == '__main__':
-    path = str(input('Введите путь к JSON файлу: '))
-    json_content = load_data(path)
+    description = 'Реализует функцию pretty_print для JSON: ' \
+                  'на входе JSON файл, на выходе его содержимое в удобоном формате'
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('-f', '--filepath',
+                        type=str,
+                        required=True,
+                        help='Путь до файла.')
+
+    args = parser.parse_args()
+
+    json_content = load_data(args.filepath)
     if json_content is None:
         print('Файл пуст или не существует.')
     else:
