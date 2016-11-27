@@ -17,13 +17,14 @@ def pretty_print_json(data):
 
 
 if __name__ == '__main__':
-    description = 'Реализует функцию pretty_print для JSON: ' \
-                  'на входе JSON файл, на выходе его содержимое в удобоном формате'
+    description = 'Реализует функцию pretty_print для файлов JSON: ' \
+                  'в качестве входного параметра следует передать путь до файла JSON, ' \
+                  'содержимое которого будет выведено в консоль в удобном для чтения виде'
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('-f', '--filepath',
                         type=str,
                         required=True,
-                        help='Путь до файла.')
+                        help='Путь до JSON файла.')
 
     args = parser.parse_args()
 
