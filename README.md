@@ -10,11 +10,12 @@ cd 4_json
 $ python pprint_json.py -h
 usage: pprint_json.py [-h] -f FILEPATH
 
-Реализует функцию pretty_print для JSON: на входе JSON файл, на выходе его
-содержимое в удобоном формате
+Реализует функцию pretty_print для файлов JSON: в качестве входного параметра
+следует передать путь до файла JSON, содержимое которого будет выведено в
+консоль в удобном для чтения виде
 
 optional arguments:
   -h, --help            show this help message and exit
   -f FILEPATH, --filepath FILEPATH
-                        Путь до файла.
+                        Путь до JSON файла.
 ```
